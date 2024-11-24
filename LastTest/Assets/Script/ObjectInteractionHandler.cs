@@ -6,12 +6,12 @@ using System.Collections;
 public class ObjectInteractionHandler : MonoBehaviour
 {
     [Header("Object Information")]
-    public string locationName; // 장소 이름 (Inspector에서 설정)
-    public string locationDescription; // 장소 설명 (Inspector에서 설정)
+    public string locationName; // 장소 이름
+    public string locationDescription; // 장소 설명
     public bool isLocked = true; // 초기 잠금 상태
 
     [Header("Global UI References")]
-    public GameObject descriptionUI; // 설명 이미지 UI (전역적으로 관리)
+    public GameObject descriptionUI; // 설명 이미지 UI
     public TextMeshProUGUI nameText; // 장소 이름 텍스트
     public TextMeshProUGUI descriptionText; // 장소 설명 텍스트
     public Button actionButton; // 입장 버튼 또는 잠금 상태 버튼
@@ -28,6 +28,18 @@ public class ObjectInteractionHandler : MonoBehaviour
     private static GameObject activeDescriptionUI; // 현재 활성화된 설명 UI
     private Coroutine fadeCoroutine;
 
+    private void Start()
+    {
+        // UI 초기화: 비활성화 상태로 설정
+        if (descriptionUI != null) descriptionUI.SetActive(false);
+        if (unlockPromptUI != null) unlockPromptUI.SetActive(false);
+        if (keyAlertUI != null) keyAlertUI.SetActive(false);
+
+        // keyAlertUI 위치 조정 (화면 상단 중앙)
+        RectTransform keyAlertRect = keyAlertUI.GetComponent<RectTransform>();
+        keyAlertRect.anchoredPosition = new Vector2(0, Screen.height * 0.4f); // 상단 중앙
+    }
+
     private void OnMouseEnter()
     {
         if (CompareTag("Struct"))
@@ -38,7 +50,7 @@ public class ObjectInteractionHandler : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (CompareTag("Struct"))
+        if (CompareTag("Struct") && !IsMouseOverUI())
         {
             HighlightObject(false); // 외곽선 비활성화
             CloseDescriptionUI(); // 설명 UI 닫기
@@ -62,31 +74,57 @@ public class ObjectInteractionHandler : MonoBehaviour
 
         activeDescriptionUI = descriptionUI;
 
-        nameText.text = locationName; // 장소 이름 설정
-        descriptionText.text = locationDescription; // 장소 설명 설정
+        // 장소 정보 설정
+        nameText.text = locationName;
+        descriptionText.text = locationDescription;
+
+        // 설명 UI 위치 설정 (오브젝트 기준으로 우측 상단)
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 adjustedPosition = new Vector3(screenPosition.x + 150, screenPosition.y + 100, screenPosition.z);
+        descriptionUI.transform.position = adjustedPosition;
+
         descriptionUI.SetActive(true); // 설명 UI 활성화
+
+        // unlockPromptUI 위치 조정: descriptionUI 바로 위에 출력
+        if (unlockPromptUI != null)
+        {
+            RectTransform descriptionRect = descriptionUI.GetComponent<RectTransform>();
+            RectTransform unlockPromptRect = unlockPromptUI.GetComponent<RectTransform>();
+
+            // unlockPromptUI를 descriptionUI 위로 위치 조정
+            unlockPromptRect.position = new Vector3(descriptionRect.position.x, descriptionRect.position.y + 100, descriptionRect.position.z);
+
+            // unlockPromptUI의 Canvas Sorting Order를 증가시켜 항상 설명 UI 위에 출력
+            Canvas unlockCanvas = unlockPromptUI.GetComponent<Canvas>();
+            if (unlockCanvas != null)
+            {
+                unlockCanvas.overrideSorting = true;
+                unlockCanvas.sortingOrder = 10; // 높은 Sorting Order 값 설정
+            }
+        }
 
         // 버튼 설정
         if (isLocked)
         {
-            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "잠금 상태";
+            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Lock State"; // 잠금 상태
             actionButton.onClick.RemoveAllListeners();
             actionButton.onClick.AddListener(HandleLockedState);
         }
         else
         {
-            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "입장";
+            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Enter";  // 입장
             actionButton.onClick.RemoveAllListeners();
             actionButton.onClick.AddListener(EnterLocation);
         }
     }
+
 
     private void HandleLockedState()
     {
         if (playerKeys > 0)
         {
             unlockPromptUI.SetActive(true); // 잠금 해제 UI 활성화
-            unlockPromptText.text = "열쇠를 사용해 잠금을 해제하시겠습니까?";
+            unlockPromptText.text = "Do you want to use the key to unlock it?";
             unlockYesButton.onClick.RemoveAllListeners();
             unlockYesButton.onClick.AddListener(UnlockLocation);
             unlockNoButton.onClick.RemoveAllListeners();
@@ -96,7 +134,7 @@ public class ObjectInteractionHandler : MonoBehaviour
         {
             if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
             keyAlertUI.SetActive(true); // 열쇠 필요 안내 UI 활성화
-            keyAlertText.text = "열쇠가 필요합니다";
+            keyAlertText.text = "You need a key";
             fadeCoroutine = StartCoroutine(FadeOutKeyAlert());
         }
     }
@@ -118,22 +156,26 @@ public class ObjectInteractionHandler : MonoBehaviour
     private IEnumerator FadeOutKeyAlert()
     {
         CanvasGroup canvasGroup = keyAlertUI.GetComponent<CanvasGroup>();
+
+        // Alpha 초기값 설정
         canvasGroup.alpha = 1f;
+
         yield return new WaitForSeconds(1f);
 
+        // 서서히 Alpha 값을 줄임
         while (canvasGroup.alpha > 0)
         {
-            canvasGroup.alpha -= Time.deltaTime; // 서서히 투명화
+            canvasGroup.alpha -= Time.deltaTime;
             yield return null;
         }
 
-        keyAlertUI.SetActive(false); // 안내 UI 비활성화
-        canvasGroup.alpha = 1f; // 알파값 복원
+        keyAlertUI.SetActive(false); // UI 비활성화
+        canvasGroup.alpha = 1f; // Alpha 초기화
     }
 
     private void EnterLocation()
     {
-        Debug.Log($"{locationName}에 입장합니다!"); // 입장 처리 (추가 동작 가능)
+        Debug.Log($"{locationName}에 입장합니다!");
         CloseDescriptionUI();
     }
 
@@ -141,7 +183,7 @@ public class ObjectInteractionHandler : MonoBehaviour
     {
         if (descriptionUI != null)
         {
-            descriptionUI.SetActive(false); // 설명 UI 비활성화
+            descriptionUI.SetActive(false);
         }
 
         HighlightObject(false); // 외곽선 제거
@@ -149,6 +191,12 @@ public class ObjectInteractionHandler : MonoBehaviour
 
     private void HighlightObject(bool highlight)
     {
-        // 외곽선 표시 구현 (기존 Shader나 Material 변경 로직 활용)
+        // 외곽선 표시 구현
+    }
+
+    private bool IsMouseOverUI()
+    {
+        // 마우스가 UI 위에 있는지 확인 (UnityEngine.EventSystems 사용 필요)
+        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
 }

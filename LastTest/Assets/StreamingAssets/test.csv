@@ -1,0 +1,5 @@
+Num,EventName,NPCName,Contents,Image
+1,Start,AAA,aa,forest_background
+1,Start,AAA,aaaaaa,forest_background
+2,End,BB,bbbbbbb,forest_background
+2,End,BB,bb,forest_background
