@@ -77,14 +77,17 @@ public class DialogManager : MonoBehaviour
             dialogText.text = currentLine.Contents;
 
             // 배경 이미지 업데이트
-            Sprite newSprite = Resources.Load<Sprite>($"Background/{currentLine.ImageName}");
+            string imagePath = $"Background/{Path.GetFileNameWithoutExtension(currentLine.ImageName.Trim())}"; // 공백 제거
+            Debug.Log($"Loading image from path: {imagePath}"); // 디버그 로그 추가
+            Sprite newSprite = Resources.Load<Sprite>(imagePath);
+
             if (newSprite != null)
             {
                 backgroundImage.sprite = newSprite;
             }
             else
             {
-                Debug.LogWarning($"이미지를 찾을 수 없습니다: {currentLine.ImageName}");
+                Debug.LogWarning($"이미지를 찾을 수 없습니다: {imagePath}");
             }
 
             currentIndex++;
@@ -95,6 +98,8 @@ public class DialogManager : MonoBehaviour
             Debug.Log("종료되었습니다");
         }
     }
+
+
 
     // 대사 데이터를 담는 클래스
     private class DialogLine

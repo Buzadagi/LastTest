@@ -9,6 +9,8 @@ public class ObjectInteractionHandler : MonoBehaviour
     public string locationName; // 장소 이름
     public string locationDescription; // 장소 설명
     public bool isLocked = true; // 초기 잠금 상태
+    public string sceneName; // 이동할 씬 이름
+    public Vector3 destinationPosition; // 씬 내에서의 좌표
 
     [Header("Global UI References")]
     public GameObject descriptionUI; // 설명 이미지 UI
@@ -21,23 +23,34 @@ public class ObjectInteractionHandler : MonoBehaviour
     public Button unlockNoButton; // 잠금 해제 아니오 버튼
     public GameObject keyAlertUI; // 열쇠 필요 안내 UI
     public TextMeshProUGUI keyAlertText; // 열쇠 필요 텍스트
+    public GameObject coinVestUI; // Coin Vest UI
+    public TextMeshProUGUI countText; // Coin Vest의 Count Text
+    public Button minusButton; // Coin Vest의 Minus Button
+    public Button plusButton; // Coin Vest의 Plus Button
+    public Button okButton; // Coin Vest의 OK Button
+    public Button nextButton; // NextButton
 
-    [Header("Player Data")]
-    public int playerKeys = 0; // 플레이어의 열쇠 개수
+    [Header("Icon References")]
+    public GameObject coinCountIconPrefab; // CoinCount Icon Prefab 
+
+    [Header("GameManager Reference")]
+    private GameManager gameManager; // GameManager 참조
 
     private static GameObject activeDescriptionUI; // 현재 활성화된 설명 UI
     private Coroutine fadeCoroutine;
 
+    private int currentInvestment = 0; // Coin Vest에서 설정한 금액
+    private int pendingInvestment = 0; // NextButton 클릭 전까지 관리할 임시 금액
+
     private void Start()
     {
-        // UI 초기화: 비활성화 상태로 설정
+        gameManager = FindObjectOfType<GameManager>();
+
         if (descriptionUI != null) descriptionUI.SetActive(false);
         if (unlockPromptUI != null) unlockPromptUI.SetActive(false);
         if (keyAlertUI != null) keyAlertUI.SetActive(false);
-
-        // keyAlertUI 위치 조정 (화면 상단 중앙)
-        RectTransform keyAlertRect = keyAlertUI.GetComponent<RectTransform>();
-        keyAlertRect.anchoredPosition = new Vector2(0, Screen.height * 0.4f); // 상단 중앙
+        if (coinVestUI != null) coinVestUI.SetActive(false);
+        if (nextButton != null) nextButton.gameObject.SetActive(false); // NextButton 초기화
     }
 
     private void OnMouseEnter()
@@ -69,61 +82,32 @@ public class ObjectInteractionHandler : MonoBehaviour
     {
         if (activeDescriptionUI != null && activeDescriptionUI != descriptionUI)
         {
-            activeDescriptionUI.SetActive(false); // 기존 UI 비활성화
+            activeDescriptionUI.SetActive(false);
         }
 
         activeDescriptionUI = descriptionUI;
 
-        // 장소 정보 설정
         nameText.text = locationName;
         descriptionText.text = locationDescription;
 
-        // 설명 UI 위치 설정 (오브젝트 기준으로 우측 상단)
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 adjustedPosition = new Vector3(screenPosition.x + 150, screenPosition.y + 100, screenPosition.z);
         descriptionUI.transform.position = adjustedPosition;
 
-        descriptionUI.SetActive(true); // 설명 UI 활성화
+        descriptionUI.SetActive(true);
 
-        // unlockPromptUI 위치 조정: descriptionUI 바로 위에 출력
-        if (unlockPromptUI != null)
-        {
-            RectTransform descriptionRect = descriptionUI.GetComponent<RectTransform>();
-            RectTransform unlockPromptRect = unlockPromptUI.GetComponent<RectTransform>();
-
-            // unlockPromptUI를 descriptionUI 위로 위치 조정
-            unlockPromptRect.position = new Vector3(descriptionRect.position.x, descriptionRect.position.y + 100, descriptionRect.position.z);
-
-            // unlockPromptUI의 Canvas Sorting Order를 증가시켜 항상 설명 UI 위에 출력
-            Canvas unlockCanvas = unlockPromptUI.GetComponent<Canvas>();
-            if (unlockCanvas != null)
-            {
-                unlockCanvas.overrideSorting = true;
-                unlockCanvas.sortingOrder = 10; // 높은 Sorting Order 값 설정
-            }
-        }
-
-        // 버튼 설정
-        if (isLocked)
-        {
-            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Lock State"; // 잠금 상태
-            actionButton.onClick.RemoveAllListeners();
-            actionButton.onClick.AddListener(HandleLockedState);
-        }
-        else
-        {
-            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Enter";  // 입장
-            actionButton.onClick.RemoveAllListeners();
-            actionButton.onClick.AddListener(EnterLocation);
-        }
+        actionButton.GetComponentInChildren<TextMeshProUGUI>().text = isLocked ? "Lock State" : "Enter";
+        actionButton.onClick.RemoveAllListeners();
+        actionButton.onClick.AddListener(isLocked ? HandleLockedState : EnterLocation);
     }
-
 
     private void HandleLockedState()
     {
+        int playerKeys = gameManager.GetPlayerKeys();
+
         if (playerKeys > 0)
         {
-            unlockPromptUI.SetActive(true); // 잠금 해제 UI 활성화
+            unlockPromptUI.SetActive(true);
             unlockPromptText.text = "Do you want to use the key to unlock it?";
             unlockYesButton.onClick.RemoveAllListeners();
             unlockYesButton.onClick.AddListener(UnlockLocation);
@@ -133,7 +117,7 @@ public class ObjectInteractionHandler : MonoBehaviour
         else
         {
             if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-            keyAlertUI.SetActive(true); // 열쇠 필요 안내 UI 활성화
+            keyAlertUI.SetActive(true);
             keyAlertText.text = "You need a key";
             fadeCoroutine = StartCoroutine(FadeOutKeyAlert());
         }
@@ -141,42 +125,79 @@ public class ObjectInteractionHandler : MonoBehaviour
 
     private void UnlockLocation()
     {
-        playerKeys--; // 열쇠 사용
-        isLocked = false; // 잠금 해제
-        unlockPromptUI.SetActive(false); // 잠금 해제 UI 비활성화
-        ShowDescriptionUI(); // UI 갱신
+        gameManager.AddKeys(-1);
+        isLocked = false;
+        unlockPromptUI.SetActive(false);
+        ShowDescriptionUI();
+    }
+
+    private void EnterLocation()
+    {
+        coinVestUI.SetActive(true);
+
+        currentInvestment = 0;
+        pendingInvestment = 0;
+        countText.text = currentInvestment.ToString();
+
+        int maxCoins = PlayerPrefs.GetInt("Coins");
+
+        minusButton.onClick.RemoveAllListeners();
+        minusButton.onClick.AddListener(() =>
+        {
+            if (currentInvestment > 0)
+            {
+                currentInvestment--;
+                countText.text = currentInvestment.ToString();
+            }
+        });
+
+        plusButton.onClick.RemoveAllListeners();
+        plusButton.onClick.AddListener(() =>
+        {
+            if (currentInvestment < maxCoins)
+            {
+                currentInvestment++;
+                countText.text = currentInvestment.ToString();
+            }
+        });
+
+        okButton.onClick.RemoveAllListeners();
+        okButton.onClick.AddListener(() =>
+        {
+            pendingInvestment = currentInvestment;
+
+            coinVestUI.SetActive(false);
+            nextButton.gameObject.SetActive(true);
+
+            Debug.Log($"Pending investment: {pendingInvestment} coins in {locationName}");
+        });
+
+        nextButton.onClick.RemoveAllListeners();
+        nextButton.onClick.AddListener(() =>
+        {
+            SceneMove.LoadSceneWithPosition(sceneName, destinationPosition);
+        });
     }
 
     private void CloseUnlockPromptUI()
     {
-        unlockPromptUI.SetActive(false); // 잠금 해제 UI 비활성화
-        CloseDescriptionUI();
+        unlockPromptUI.SetActive(false);
     }
 
     private IEnumerator FadeOutKeyAlert()
     {
         CanvasGroup canvasGroup = keyAlertUI.GetComponent<CanvasGroup>();
-
-        // Alpha 초기값 설정
         canvasGroup.alpha = 1f;
-
         yield return new WaitForSeconds(1f);
 
-        // 서서히 Alpha 값을 줄임
         while (canvasGroup.alpha > 0)
         {
             canvasGroup.alpha -= Time.deltaTime;
             yield return null;
         }
 
-        keyAlertUI.SetActive(false); // UI 비활성화
-        canvasGroup.alpha = 1f; // Alpha 초기화
-    }
-
-    private void EnterLocation()
-    {
-        Debug.Log($"{locationName}에 입장합니다!");
-        CloseDescriptionUI();
+        keyAlertUI.SetActive(false);
+        canvasGroup.alpha = 1f;
     }
 
     private void CloseDescriptionUI()
@@ -186,7 +207,7 @@ public class ObjectInteractionHandler : MonoBehaviour
             descriptionUI.SetActive(false);
         }
 
-        HighlightObject(false); // 외곽선 제거
+        HighlightObject(false);
     }
 
     private void HighlightObject(bool highlight)
@@ -196,7 +217,6 @@ public class ObjectInteractionHandler : MonoBehaviour
 
     private bool IsMouseOverUI()
     {
-        // 마우스가 UI 위에 있는지 확인 (UnityEngine.EventSystems 사용 필요)
         return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
 }
