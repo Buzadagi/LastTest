@@ -179,7 +179,26 @@ public class ObjectInteractionHandler : MonoBehaviour
             PlayerPrefs.SetInt("Coins", currentCoins - pendingInvestment); // 투자한 만큼 코인 차감
 
             coinVestUI.SetActive(false);
+
             nextButton.gameObject.SetActive(true);
+
+            // 버튼 위치 초기화 (UI 기준)
+            RectTransform nextButtonRect = nextButton.GetComponent<RectTransform>();
+            nextButtonRect.anchoredPosition = Vector2.zero; // UI 캔버스 좌표계 기준으로 위치 설정
+
+            // 버튼이 항상 상위 계층에 표시되도록 설정
+            nextButton.transform.SetAsLastSibling();
+
+            // 버튼의 CanvasGroup 활성화 (선택 사항)
+            CanvasGroup nextButtonCanvasGroup = nextButton.GetComponent<CanvasGroup>();
+            if (nextButtonCanvasGroup != null)
+            {
+                nextButtonCanvasGroup.alpha = 1f;
+                nextButtonCanvasGroup.interactable = true;
+                nextButtonCanvasGroup.blocksRaycasts = true;
+            }
+
+
 
             Debug.Log($"Pending investment: {pendingInvestment} coins in {locationName}");
         });

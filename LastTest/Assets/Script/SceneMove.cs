@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneMove : MonoBehaviour
 {
+    public bool isUIElement = false; // UI 요소인지 여부를 명시적으로 구분
+
     public static void LoadSceneWithPosition(string sceneName, Vector3 position)
     {
         PlayerPrefs.SetFloat("TargetX", position.x);
@@ -14,6 +16,8 @@ public class SceneMove : MonoBehaviour
 
     private void Start()
     {
+        if (isUIElement) return; // UI 요소는 위치 변경을 건너뜀
+
         if (PlayerPrefs.HasKey("TargetX") && PlayerPrefs.HasKey("TargetY") && PlayerPrefs.HasKey("TargetZ"))
         {
             float x = PlayerPrefs.GetFloat("TargetX");
