@@ -7738,6 +7738,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5268103084784951450, guid: 7cec211b4bed0464380f9cc98f6f43d2, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268103084784951450, guid: 7cec211b4bed0464380f9cc98f6f43d2, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268103084784951450, guid: 7cec211b4bed0464380f9cc98f6f43d2, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6411436921166019180, guid: 7cec211b4bed0464380f9cc98f6f43d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7899,6 +7911,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2019593229304220079, guid: 12cb4d6852527e8499a2f24a8f3e8f31, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019593229304220079, guid: 12cb4d6852527e8499a2f24a8f3e8f31, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019593229304220079, guid: 12cb4d6852527e8499a2f24a8f3e8f31, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 4882619347132161032, guid: 12cb4d6852527e8499a2f24a8f3e8f31, type: 3}
       propertyPath: m_Name
       value: Exit Canvas
