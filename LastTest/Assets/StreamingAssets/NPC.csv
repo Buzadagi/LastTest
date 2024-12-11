@@ -1,0 +1,57 @@
+ID,NPCName,Speaker,Dialogue,ImageName,ObjectName
+0,Ludwin,Player,"Mr. Ludwin, do you recognize all the people in this photo?",Ludwin,Ludwin
+1,Ludwin,Ludwin,"Ah, yes. I took the picture myself. Let me see… ",Ludwin,Ludwin
+2,Ludwin,Ludwin,"That’s me there, of course. The others?",Ludwin,Ludwin
+3,Ludwin,Ludwin,"They were all part of the party?some close friends of Mr. Porterfield, others just acquaintances. Quite the lively group.",Ludwin,Ludwin
+4,Galerias,Player,"Mr. Galerias, what do you remember from last night?",Galerias,Galerias
+5,Galerias,Galerias,"Look here. It was a hot night, and I wanted to step outside for some fresh air.",Galerias,Galerias
+6,Galerias,Galerias,"Let me be honest with you. From the moment the first note played, I knew the performance was a disaster.",Galerias,Galerias
+7,Galerias,Galerias,"When I stepped outside, I bumped into Mrs. Hunter. We had a brief chat before heading back inside.",Galerias,Galerias
+8,Galerias,Galerias,I can still picture poor Roderick watching us. May he rest in peace…,Galerias,Galerias
+9,Galerias,Galerias,"After that, I never saw him again.",Galerias,Galerias
+10,Suyevich,Player,"Mr. Suyevich, what can you tell me about the performance last night?",Suyevich,Suyevich
+11,Suyevich,Suyevich,"Ah, the Steinway & Sons upright piano in Mrs. Porterfield’s mansion was simply exquisite.",Suyevich,Suyevich
+12,Suyevich,Suyevich,"I was fully prepared, of course. But let me tell you something?before every performance, I never touch a drop of alcohol.",Suyevich,Suyevich
+13,Suyevich,Suyevich,"However, when the performance began, one of the keys didn’t produce a sound. And the tone was slightly off. I had to improvise and adjust the sheet music on the spot.",Suyevich,Suyevich
+14,Suyevich,Suyevich,"Believe me, it’s not as easy as it sounds! I attended the party because Dr. Spencer invited me earlier that morning.",Suyevich,Suyevich
+15,Hunter,Player,"Mrs. Hunter, can you tell me about your evening last night?",Hunter,Hunter
+16,Hunter,Hunter,I’m a friend of Gwendlolyn Porterfield.,Hunter,Hunter
+17,Hunter,Hunter,"I taught her how to play that magnificent piano at the mansion. In fact, I gave her a lesson that very morning.",Hunter,Hunter
+18,Hunter,Hunter,"After dinner, I felt like a little walk, so I strolled toward the annex to enjoy the stars. The building was dark, but the front door was open, so I sat down inside.",Hunter,Hunter
+19,Hunter,Hunter,"I could hear the sound of piano music from a distance. Soon, I heard whispers from the next room. ",Hunter,Hunter
+20,Hunter,Hunter,"I thought someone was sharing a private moment, so I decided to return to the piano room.",Hunter,Hunter
+21,Hunter,Hunter,"On my way back, I ran into Mr. Galerias, who kindly accompanied me back into the mansion.",Hunter,Hunter
+22,Hunter,Hunter,"Mr. Suyevich is a well-respected musician, but I must admit, last night’s performance wasn’t extraordinary.",Hunter,Hunter
+23,Hunter,Hunter,"I may sound arrogant, but perhaps my performance would have been better.",Hunter,Hunter
+24,Porterfield,Player,"Mrs. Porterfield, could you tell me more about your husband’s behavior before the incident?",Porterfield,Porterfield
+25,Porterfield,Porterfield,He was always so composed. I didn't notice anything unusual in the days leading up to the incident.,Porterfield,Porterfield
+26,Porterfield,Porterfield,As for his plans regarding the company... I'm afraid I know nothing about them.,Porterfield,Porterfield
+27,Porterfield,Porterfield,"After dinner, he did speak to various people at the party, but he wasn't interested in conversing with everyone.",Porterfield,Porterfield
+28,Porterfield,Porterfield,"You see, my husband and my brother-in-law never truly treated each other like brothers, despite being related.",Porterfield,Porterfield
+29,Accountant,Player,"I understand that your company has no debt and that the profits were split between Mr. Porterfield, his wife, and his brother.",Accountant,Accountant
+30,Accountant,Player,But I heard that Mr. Porterfield was preparing a report to sell the company. Can you elaborate on that?,Accountant,Accountant
+31,Accountant,Accountant,"Yes, that's correct. The company has always been in good standing financially. The profits have been distributed as you mentioned.",Accountant,Accountant
+32,Accountant,Accountant,"But, regarding the sale, Mr. Porterfield was indeed preparing to sell the business to a Dutch company.",Accountant,Accountant
+33,Accountant,Accountant,"He had already agreed to terms, and the official contract was scheduled to be signed tomorrow in Amsterdam. Mr. Porterfield was set to receive a substantial amount of money from the deal.",Accountant,Accountant
+34,Accountant,Accountant,"However, his brother, Edward, gave instructions to halt the sale and keep the business running as it was.",Accountant,Accountant
+35,Edward ,Player,"Mr. Porterfield, you mentioned that you arrived at the mansion first and spent time reading in the piano room. Can you tell me more about what happened after that?",Edward,Edward
+36,Edward ,Edward,"Yes, that's right. I was the first to arrive at the mansion. My brother and Mrs. Porterfield weren't there yet.",Edward,Edward
+37,Edward ,Edward,"So, I spent some time in the piano room reading. The staff can confirm this.",Edward,Edward
+38,Edward ,Edward,"Around 6 PM, my brother and his wife arrived with their first guest.",Edward,Edward
+39,Edward ,Player,"I’ve heard that your brother was planning to sell the company, but you stopped the process. What was your reasoning?",Edward,Edward
+40,Edward ,Edward,"My brother started the business, and I supported him as his assistant. The profits were my only means of livelihood.",Edward,Edward
+41,Edward ,Edward,"Now, it seems I must take charge of the business.",Edward,Edward
+42,Edward ,Edward,"Regarding the sale, I was unaware of my brother’s intentions to exclude Mrs. Porterfield from the inheritance, as was mentioned by Mr. Oldman. I don't know why he did that.",Edward,Edward
+43,Spencer,Player,"Dr. Spencer, I understand that you saw Mr. Su?vitch yesterday morning. Can you tell me about that?",Spencer,Spencer
+44,Spencer,Spencer,"Yes, Mr. Su?vitch came in for a consultation regarding a minor digestive issue. It wasn't serious at all.",Spencer,Spencer
+45,Spencer,Spencer,"Knowing that there was a party at the Porterfield estate that evening, and recalling the beautiful piano there, I invited him to come along.",Spencer,Spencer
+46,Spencer,Spencer,"After my workday was over, I left my wife at home and headed to the mansion. As expected, Mr. Su?vitch was warmly welcomed.",Spencer,Spencer
+47,Spencer,Spencer,"He played some stunning pieces that night, and I spent the evening listening to his beautiful music. Of course, everything changed when Roderick’s body was found…",Spencer,Spencer
+48,Inspector,Player,"Inspector, I’ve heard that you discovered something interesting during your investigation. Can you tell me about the gun Mr. Porterfield had?",Inspector,Inspector
+49,Inspector,Inspector,"Yes, it’s quite curious. The firearm Mr. Porterfield possessed had only been sold two days before the incident.",Inspector,Inspector
+50,Inspector,Inspector,"According to the gun dealer, Mr. Porterfield was very clumsy with firearms.",Inspector,Inspector
+51,Inspector,Inspector,"The dealer even mentioned that Porterfield had expressed concern about using it, stating, 'I really hope I don’t have to use this.",Inspector,Inspector
+52,Inspector,Inspector,"It would be a matter of my honor.' The dealer felt that, as a gentleman, it was best not to inquire further.",Inspector,Inspector
+53,Inspector,Player,That’s certainly odd… And what about the ticket found with Mr. Porterfield?,Inspector,Inspector
+54,Inspector,Inspector,"Ah, the ticket. It was for a ship bound for Amsterdam, scheduled to depart the morning after the murder.",Inspector,Inspector
+55,Inspector,Inspector,"It’s quite suspicious, especially considering the timing. It seems Mr. Porterfield had plans to leave right after the incident.",Inspector,Inspector

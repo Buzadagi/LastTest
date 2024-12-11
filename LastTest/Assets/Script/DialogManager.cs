@@ -1,28 +1,54 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class DialogManager : MonoBehaviour
 {
     [Header("UI Elements")]
-    public TextMeshProUGUI speakerText;     // È­ÀÚ ÀÌ¸§
-    public TextMeshProUGUI dialogText;      // ¼­¼ú¹® ÅØ½ºÆ®
-    public TextMeshProUGUI eventNameText;   // ÀÌº¥Æ® ÀÌ¸§
-    public Image backgroundImage;          // ¹è°æ ÀÌ¹ÌÁö
+    public TextMeshProUGUI speakerText;     // í™”ì ì´ë¦„
+    public TextMeshProUGUI dialogText;      // ì„œìˆ ë¬¸ í…ìŠ¤íŠ¸
+    public TextMeshProUGUI eventNameText;   // ì´ë²¤íŠ¸ ì´ë¦„
+    public Image backgroundImage;          // ë°°ê²½ ì´ë¯¸ì§€
 
     [Header("Settings")]
-    public int eventNumber = 1;             // ÀÎ½ºÆåÅÍ¿¡¼­ ÀÌº¥Æ® ¹øÈ£ ¼³Á¤
-    public string csvFileName = "DialogData.csv";  // CSV ÆÄÀÏ¸í
+    public string csvFileName = "Ending.csv";  // ì—”ë”© CSV íŒŒì¼ëª…
 
-    private List<DialogLine> dialogLines = new List<DialogLine>(); // ´ë»ç ¸ñ·Ï
-    private int currentIndex = 0;           // ÇöÀç Ãâ·Â ÁßÀÎ ´ë»ç ÀÎµ¦½º
+    private List<DialogLine> dialogLines = new List<DialogLine>(); // ëŒ€ì‚¬ ëª©ë¡
+    private int currentIndex = 0;           // í˜„ì¬ ì¶œë ¥ ì¤‘ì¸ ëŒ€ì‚¬ ì¸ë±ìŠ¤
 
     private void Start()
     {
-        LoadDialogData();
-        ShowNextDialog(); // Ã¹ ¹øÂ° ´ë»ç Ãâ·Â
+        if (!PlayerPrefs.HasKey("IsInitialized"))
+        {
+            PlayerPrefs.SetString("CSVFileName", "Opening.csv");
+            PlayerPrefs.SetInt("EndingNumber", 0);
+            PlayerPrefs.SetInt("IsInitialized", 1);
+            PlayerPrefs.Save();
+        }
+
+        csvFileName = PlayerPrefs.GetString("CSVFileName", "Opening.csv");
+        int endingNumber = PlayerPrefs.GetInt("EndingNumber", 0);
+
+        if (endingNumber == 0 && csvFileName.Equals("Opening.csv", System.StringComparison.OrdinalIgnoreCase))
+        {
+            LoadDialogData("Opening");
+            ShowNextDialog();
+        }
+        else
+        {
+            string eventName = GetEventNameByEndingNumber(endingNumber);
+            if (string.IsNullOrEmpty(eventName))
+            {
+                Debug.LogError($"ìœ íš¨í•œ EventNameì´ ì—†ìŠµë‹ˆë‹¤: {endingNumber}");
+                return;
+            }
+
+            LoadDialogData(eventName);
+            ShowNextDialog();
+        }
     }
 
     private void Update()
@@ -33,75 +59,130 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    private void LoadDialogData()
+    private string GetEventNameByEndingNumber(int endingNumber)
     {
+        return endingNumber switch
+        {
+            1 => "Happy Ending",
+            2 => "Normal Ending",
+            3 => "Sad Ending",
+            _ => null,
+        };
+    }
+
+    private void LoadDialogData(string eventName)
+    {
+        dialogLines.Clear();
         string filePath = Path.Combine(Application.streamingAssetsPath, csvFileName);
 
         if (!File.Exists(filePath))
         {
-            Debug.LogError("CSV ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù: " + filePath);
+            Debug.LogError($"CSV íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤: {filePath}");
             return;
         }
 
-        string[] lines = File.ReadAllLines(filePath);
-
-        // Ã¹ ÁÙÀº Çì´õÀÌ¹Ç·Î °Ç³Ê¶Ú´Ù.
-        for (int i = 1; i < lines.Length; i++)
+        using (StreamReader reader = new StreamReader(filePath))
         {
-            string[] data = lines[i].Split(',');
-
-            if (data.Length < 5) continue;
-
-            if (int.TryParse(data[0], out int num) && num == eventNumber)
+            string headerLine = reader.ReadLine();
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                dialogLines.Add(new DialogLine
+                string[] data = ParseCsvLine(line);
+
+                if (data.Length < 5)
                 {
-                    Num = num,
-                    EventName = data[1],
-                    NPCName = data[2],
-                    Contents = data[3],
-                    ImageName = data[4]
-                });
+                    Debug.LogWarning($"ì˜ëª»ëœ ë°ì´í„° í˜•ì‹: {line}");
+                    continue;
+                }
+
+                if (data[1].Trim() == eventName.Trim())
+                {
+                    dialogLines.Add(new DialogLine
+                    {
+                        Num = int.Parse(data[0]),
+                        EventName = data[1],
+                        NPCName = data[2],
+                        Contents = data[3],
+                        ImageName = data[4].Trim()
+                    });
+                }
             }
         }
+
+        if (dialogLines.Count == 0)
+        {
+            Debug.LogWarning("ë§¤ì¹­ëœ ëŒ€ì‚¬ê°€ ì—†ìŠµë‹ˆë‹¤.");
+        }
     }
+
+    private string[] ParseCsvLine(string line)
+    {
+        // Updated pattern to handle escaped quotes and commas within quotes
+        string pattern = @"\""(?:[^\""]|\"")*\""|[^,]+";
+        MatchCollection matches = Regex.Matches(line, pattern);
+        string[] result = new string[matches.Count];
+
+        for (int i = 0; i < matches.Count; i++)
+        {
+            string value = matches[i].Value;
+
+            // Remove surrounding quotes and unescape inner quotes
+            if (value.StartsWith("\"") && value.EndsWith("\""))
+            {
+                value = value.Substring(1, value.Length - 2).Replace("\\\"", "\"");
+            }
+
+            result[i] = value;
+        }
+
+        return result;
+    }
+
 
     private void ShowNextDialog()
     {
         if (currentIndex < dialogLines.Count)
         {
-            // ´ë»ç ¾÷µ¥ÀÌÆ®
             var currentLine = dialogLines[currentIndex];
             eventNameText.text = currentLine.EventName;
             speakerText.text = currentLine.NPCName;
             dialogText.text = currentLine.Contents;
 
-            // ¹è°æ ÀÌ¹ÌÁö ¾÷µ¥ÀÌÆ®
-            string imagePath = $"Background/{Path.GetFileNameWithoutExtension(currentLine.ImageName.Trim())}"; // °ø¹é Á¦°Å
-            Debug.Log($"Loading image from path: {imagePath}"); // µğ¹ö±× ·Î±× Ãß°¡
-            Sprite newSprite = Resources.Load<Sprite>(imagePath);
+            string cleanedImageName = Path.GetFileNameWithoutExtension(currentLine.ImageName);
+            string imagePath = $"Background/{cleanedImageName}";
 
+            Sprite newSprite = Resources.Load<Sprite>(imagePath);
             if (newSprite != null)
             {
                 backgroundImage.sprite = newSprite;
             }
             else
             {
-                Debug.LogWarning($"ÀÌ¹ÌÁö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù: {imagePath}");
+                Debug.LogWarning($"ì´ë¯¸ì§€ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤: {imagePath}");
             }
 
             currentIndex++;
         }
         else
         {
-            // ´ë»ç°¡ ³¡³µÀ» ¶§
-            Debug.Log("Á¾·áµÇ¾ú½À´Ï´Ù");
+            if (csvFileName.Equals("Opening.csv", System.StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("WorldMap");
+            }
+            else if (csvFileName.Equals("Ending.csv", System.StringComparison.OrdinalIgnoreCase))
+            {
+                // PlayerPrefs ì´ˆê¸°í™”
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.Save();  // ë³€ê²½ ì‚¬í•­ ì €ì¥
+
+                Application.Quit();
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            }
         }
     }
 
-
-
-    // ´ë»ç µ¥ÀÌÅÍ¸¦ ´ã´Â Å¬·¡½º
     private class DialogLine
     {
         public int Num;

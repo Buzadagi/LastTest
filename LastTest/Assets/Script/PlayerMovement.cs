@@ -4,17 +4,20 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // 플레이어 이동 속도
+    public float moveSpeed = 5f; // 이동 속도
     public float interactionRange = 2f; // 상호작용 가능 거리
-    public GameObject interactionIndicator; // 상호작용 가능 이미지 오브젝트
+    public GameObject interactionIndicator; // 상호작용 아이콘
     public GameObject exitUI; // 나가기 UI
     public Button yesButton; // 예 버튼
     public Button noButton; // 아니요 버튼
-    public string worldMapSceneName = "WorldMap"; // 이동할 Scene 이름
+    public string worldMapSceneName = "WorldMap"; // 이동할 씬 이름
 
     private Vector3 moveDirection; // 이동 방향
-    private GameObject currentInteractable; // 현재 상호작용 가능한 오브젝트
+    private GameObject currentInteractable; // 상호작용 가능한 오브젝트
     private bool isExitUIActive = false; // 나가기 UI 활성화 여부
+    private bool isInteracting = false; // 상호작용 중 여부
+
+    private Animator animator; // 애니메이터 컴포넌트
 
     void Start()
     {
@@ -23,26 +26,54 @@ public class PlayerMovement : MonoBehaviour
         // 버튼 이벤트 연결
         yesButton.onClick.AddListener(LoadWorldMapScene);
         noButton.onClick.AddListener(DeactivateExitUI);
+
+        animator = GetComponent<Animator>(); // Animator 컴포넌트 가져오기
     }
 
     void Update()
     {
-        if (isExitUIActive)
+        if (!isInteracting) // 상호작용 중이 아닐 때만 이동 처리
         {
-            return; // UI가 활성화된 동안 플레이어 입력 차단
+            HandleMovement(); // 이동 처리
         }
 
-        HandleMovement(); // 이동 처리
         CheckForInteractable(); // 상호작용 가능 오브젝트 확인
         HandleInteraction(); // 상호작용 처리
     }
 
     void HandleMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
+        if (isExitUIActive) return; // UI 활성화 중일 때 이동 차단
 
-        moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
+        moveDirection = Vector3.zero;
+
+        // 방향키 입력
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            moveDirection += Vector3.forward;
+            animator.Play("Walk_Backward"); // 뒤로 이동 애니메이션
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            moveDirection += Vector3.back;
+            animator.Play("Walk_Forward"); // 앞으로 이동 애니메이션
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveDirection += Vector3.left;
+            animator.Play("Walk_Left"); // 왼쪽 이동 애니메이션
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveDirection += Vector3.right;
+            animator.Play("Walk_Right"); // 오른쪽 이동 애니메이션
+        }
+        else
+        {
+            animator.Play("Idle"); // 정지 상태 애니메이션
+        }
+
+        moveDirection = moveDirection.normalized;
 
         if (moveDirection.magnitude >= 0.1f)
         {
@@ -52,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckForInteractable()
     {
-        // 상호작용 가능한 오브젝트를 찾음
         currentInteractable = null;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
 
@@ -65,15 +95,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // 상호작용 가능 여부에 따라 표시 조정
+        interactionIndicator.SetActive(currentInteractable != null);
+
         if (currentInteractable != null)
         {
-            interactionIndicator.SetActive(true);
-            interactionIndicator.transform.position = transform.position + Vector3.up * 2f; // 플레이어 머리 위에 표시
-        }
-        else
-        {
-            interactionIndicator.SetActive(false);
+            interactionIndicator.transform.position = transform.position + Vector3.up * 2f; // 머리 위에 표시
         }
     }
 
@@ -81,9 +107,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            if (currentInteractable.CompareTag("Door"))
+            // 상호작용 시 애니메이션을 Idle로 설정
+            animator.Play("Idle");
+
+            ObjectInteraction interaction = currentInteractable.GetComponent<ObjectInteraction>();
+
+            if (interaction != null)
             {
-                ActivateExitUI(); // 나가기 UI 활성화
+                isInteracting = true; // 상호작용 시작
+                interaction.Interact();
+                interaction.OnInteractionEnd += EndInteraction; // 상호작용 종료 이벤트 등록
+            }
+            else if (currentInteractable.CompareTag("Door"))
+            {
+                ActivateExitUI();
             }
             else
             {
@@ -95,24 +132,28 @@ public class PlayerMovement : MonoBehaviour
     void ActivateExitUI()
     {
         isExitUIActive = true;
-        exitUI.SetActive(true); // 나가기 UI 활성화
+        exitUI.SetActive(true);
     }
 
     public void DeactivateExitUI()
     {
         isExitUIActive = false;
-        exitUI.SetActive(false); // 나가기 UI 비활성화
+        exitUI.SetActive(false);
     }
 
     public void LoadWorldMapScene()
     {
-        SceneManager.LoadScene(worldMapSceneName); // 설정된 Scene으로 이동
+        SceneManager.LoadScene(worldMapSceneName);
     }
 
     private void OnDrawGizmosSelected()
     {
-        // 상호작용 범위를 시각적으로 확인 (에디터에서만 보임)
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, interactionRange);
+    }
+
+    private void EndInteraction()
+    {
+        isInteracting = false; // 상호작용 종료
     }
 }

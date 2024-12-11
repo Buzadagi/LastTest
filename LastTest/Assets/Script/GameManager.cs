@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI policeLineText;
     public TextMeshProUGUI keyText;
+    public TextMeshProUGUI turnText; // Turn UI 추가
 
     // 초기 값
     public int defaultCoins = 10;
     public int defaultPoliceLines = 1;
     public int defaultKeys = 1;
+    public int defaultTurns
+        = 1; // 기본 Turn 값
 
     private void Start()
     {
@@ -33,6 +36,10 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Keys", defaultKeys);
         }
+        if (!PlayerPrefs.HasKey("Turns")) // Turn 값 초기화
+        {
+            PlayerPrefs.SetInt("Turns", defaultTurns);
+        }
     }
 
     private void UpdateUI()
@@ -40,6 +47,7 @@ public class GameManager : MonoBehaviour
         coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins");
         policeLineText.text = "Police: " + PlayerPrefs.GetInt("PoliceLines");
         keyText.text = "Keys: " + PlayerPrefs.GetInt("Keys");
+        turnText.text = "Turns: " + PlayerPrefs.GetInt("Turns"); // Turn UI 업데이트
     }
 
     public int GetPlayerCoins()
@@ -63,6 +71,18 @@ public class GameManager : MonoBehaviour
     {
         int currentKeys = PlayerPrefs.GetInt("Keys");
         PlayerPrefs.SetInt("Keys", currentKeys + amount);
+        UpdateUI();
+    }
+
+    public int GetTurns()
+    {
+        return PlayerPrefs.GetInt("Turns");
+    }
+
+    public void AddTurns(int amount)
+    {
+        int currentTurns = PlayerPrefs.GetInt("Turns");
+        PlayerPrefs.SetInt("Turns", currentTurns + amount);
         UpdateUI();
     }
 

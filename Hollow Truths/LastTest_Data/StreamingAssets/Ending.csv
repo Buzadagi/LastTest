@@ -1,0 +1,6 @@
+Num,EventName,NPCName,Contents,ImageName
+1,Happy Ending,Hero,"Hello, World!",forest_background
+2,Normal Ending,Hero,"This is normal.",forest_background
+3,Sad Ending,Hero,"This is, really sad.",forest_background
+4,Sad Ending,Hero,"Another line, with commas.",forest_background
+4,Bad Ending,Hero,"Bad Test.",forest_background

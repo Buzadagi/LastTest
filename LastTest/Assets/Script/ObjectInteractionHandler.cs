@@ -131,8 +131,16 @@ public class ObjectInteractionHandler : MonoBehaviour
         ShowDescriptionUI();
     }
 
+    public void SaveLocationName()
+    {
+        PlayerPrefs.SetString("CurrentLocationName", locationName);
+    }
+
     private void EnterLocation()
     {
+        // locationName을 PlayerPrefs에 저장
+        SaveLocationName();
+
         coinVestUI.SetActive(true);
 
         currentInvestment = 0;
@@ -166,6 +174,10 @@ public class ObjectInteractionHandler : MonoBehaviour
         {
             pendingInvestment = currentInvestment;
 
+            // 코인 수 업데이트
+            int currentCoins = PlayerPrefs.GetInt("Coins");
+            PlayerPrefs.SetInt("Coins", currentCoins - pendingInvestment); // 투자한 만큼 코인 차감
+
             coinVestUI.SetActive(false);
             nextButton.gameObject.SetActive(true);
 
@@ -175,6 +187,12 @@ public class ObjectInteractionHandler : MonoBehaviour
         nextButton.onClick.RemoveAllListeners();
         nextButton.onClick.AddListener(() =>
         {
+            // 'Turns' 값 증가
+            int currentTurns = gameManager.GetTurns();
+            gameManager.AddTurns(1); // Turn 수 1 증가
+            Debug.Log($"Turn increased to: {currentTurns + 1}");
+
+            // 씬 이동
             SceneMove.LoadSceneWithPosition(sceneName, destinationPosition);
         });
     }

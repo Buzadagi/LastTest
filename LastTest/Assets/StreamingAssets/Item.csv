@@ -1,0 +1,32 @@
+ID,ItemName,Dialogue,ImageName,ObjectName
+0,Furniture,Everything is in its place. Not a single item out of order.,furniture.png,Furniture
+1,Furniture,It's almost unnerving how meticulous the arrangement is.,furniture.png,Furniture
+2,Conversation,The paintings on the wall are flawless in their symmetry. ,conversation.png,Conversation
+3,Conversation,But I wonder if they are hiding something behind their perfection.,conversation.png,Conversation
+4,Chiffonier,The drawer is slightly open.,desk.png,Chiffonier
+5,Chiffonier,"Inside, there are documents related to the sale of the company.",desk.png,Chiffonier
+6,Chiffonier,Strange. Why would he leave such sensitive papers here?,desk.png,Chiffonier
+7,Portrait,"The frame is shattered, and the portrait is upside down.",portrait.png,Portrait
+8,Portrait,What happened here? ,portrait.png,Portrait
+9,Portrait,This can't be an accident.,portrait.png,Portrait
+10,Piano,This piano looks expensive.,piano.png,Piano
+11,Piano,It seems like it was a centerpiece of the party.,piano.png,Piano
+12,Piano,I wonder if it played any role in what happened last night.,piano.png,Piano
+13,Ceramic,These ceramic pieces are neatly arranged by size.,porcelain.png,Ceramic
+14,Ceramic,But there's one that seems out of place. ,porcelain.png,Ceramic
+15,Ceramic,Why is it not in the right order?,porcelain.png,Ceramic
+16,Evidence,The smell of food and cigarettes still lingers in the air.,traces.png,Evidence
+17,Evidence,This place was clearly chaotic last night. But what does it all mean?,traces.png,Evidence
+18,Dirtroad,"The muddy path is littered with footprints, too many to distinguish any single one.",footprints.png,Dirtroad
+19,Dirtroad,It seems like countless people have passed through here.,footprints.png,Dirtroad
+20,Dirtroad,It's nearly impossible for the police to identify a specific trace.,footprints.png,Dirtroad
+21,Corpse,"The victim's body lies in the south room, half-hidden by scattered chairs.",body.png,Corpse
+22,Corpse,His face is bruised and swollen. ,body.png,Corpse
+23,Corpse,"The most disturbing part is the clear and sharp mark across his neck, stretching from his throat down to the nape of his neck. It’s nearly severed.",body.png,Corpse
+24,Ladder,"A ladder rests against the wall, carelessly placed.",ladder.png,Ladder
+25,Ladder,It's unclear whether it was meant to be used in the crime or if it was simply abandoned here.,ladder.png,Ladder
+26,Ladder,"Still, it’s odd that it’s positioned so close to the body.",ladder.png,Ladder
+27,Picture,This photo captures a lively scene from the party.,photograph.png,Picture
+28,Picture,"Fifteen people, all smiling and posing for the camera.",photograph.png,Picture
+29,Picture,"Some seated, others standing, all dressed in vibrant colors.",photograph.png,Picture
+30,Picture,"It's a cheerful moment frozen in time, but something feels off.",photograph.png,Picture
