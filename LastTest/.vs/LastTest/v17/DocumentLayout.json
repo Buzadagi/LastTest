@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\4dnwl\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\script\\scenemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\scenemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\dialogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\dialogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\4dnwl\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\script\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\4dnwl\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\script\\highlightonhover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\highlightonhover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\scenemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\scenemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\objectinteractionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\objectinteractionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\displaylocationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\displaylocationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\dialogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\dialogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\assets\\script\\objectinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,11 +66,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "HighlightOnHover.cs",
+              "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\HighlightOnHover.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\HighlightOnHover.cs",
+              "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\HighlightOnHover.cs",
+              "RelativeToolTip": "Assets\\Script\\HighlightOnHover.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T01:42:44.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SceneMove.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\SceneMove.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\SceneMove.cs",
@@ -79,33 +96,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NPC.cs",
-              "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\NPC.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\NPC.cs",
-              "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\NPC.cs",
-              "RelativeToolTip": "Assets\\Script\\NPC.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T12:42:36.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ObjectInteractionHandler.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\ObjectInteractionHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ObjectInteractionHandler.cs",
               "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\ObjectInteractionHandler.cs",
               "RelativeToolTip": "Assets\\Script\\ObjectInteractionHandler.cs",
-              "ViewState": "AgIAAOwAAAAAAAAAAAAAAAIBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAAAA4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T01:06:55.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
@@ -113,36 +117,49 @@
               "RelativeToolTip": "Assets\\Script\\GameManager.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T12:46:04.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T12:46:04.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AnswerManager.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\AnswerBox\\AnswerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\AnswerBox\\AnswerManager.cs",
               "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\AnswerBox\\AnswerManager.cs",
               "RelativeToolTip": "Assets\\Script\\AnswerBox\\AnswerManager.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAgwEUAAAAwAAAA",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAEUAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T09:06:55.847Z"
+              "WhenOpened": "2024-12-10T09:06:55.847Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "DialogManager.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\DialogManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\DialogManager.cs",
               "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\DialogManager.cs",
               "RelativeToolTip": "Assets\\Script\\DialogManager.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAAAMIAAAAAAAAA",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T04:29:19.393Z"
+              "WhenOpened": "2024-12-05T04:29:19.393Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "NPC.cs",
+              "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\NPC.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\NPC.cs",
+              "ToolTip": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\NPC.cs",
+              "RelativeToolTip": "Assets\\Script\\NPC.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T12:42:36.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerMovement.cs",
@@ -150,12 +167,11 @@
               "RelativeToolTip": "Assets\\Script\\PlayerMovement.cs",
               "ViewState": "AgIAAIcAAAAAAAAAAAAiwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T13:56:45.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T13:56:45.038Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DisplayLocationName.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\DisplayLocationName.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\DisplayLocationName.cs",
@@ -167,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ObjectInteraction.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\ObjectInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ObjectInteraction.cs",
@@ -179,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TitleScreen.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\TitleScreen.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\TitleScreen.cs",
@@ -191,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AnswerBoxController.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\AnswerBox\\AnswerBoxController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\AnswerBox\\AnswerBoxController.cs",
@@ -203,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CameraFollow.cs",
@@ -215,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "QuestionButtonHandler.cs",
               "DocumentMoniker": "C:\\Users\\4dnwl\\OneDrive\\\uBB38\uC11C\\GitHub\\LastTest\\LastTest\\Assets\\Script\\QuestionButtonHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\QuestionButtonHandler.cs",

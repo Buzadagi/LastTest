@@ -48,21 +48,12 @@
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector3" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector4" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.UIFoldout" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.VolumeProfile" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.HighDefinition.Runtime">
 		<type fullname="UnityEngine.Rendering.HighDefinition.ComputeMaterialLibrary" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.Exposure" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.Fog" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.GlobalIllumination" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.GradientSky" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineGlobalSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineRuntimeResources" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.RayTracingSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.VisualEnvironment" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
 		<type fullname="TMPro.TextMeshProUGUI" preserve="nothing"/>

@@ -32,6 +32,8 @@ public class ObjectInteractionHandler : MonoBehaviour
 
     [Header("Icon References")]
     public GameObject coinCountIconPrefab; // CoinCount Icon Prefab 
+    public GameObject coinImg; // CoinImg UI (기존에 있는 이미지)
+    public TextMeshProUGUI coinText; // CoinImg 안의 CoinText
 
     [Header("GameManager Reference")]
     private GameManager gameManager; // GameManager 참조
@@ -51,6 +53,7 @@ public class ObjectInteractionHandler : MonoBehaviour
         if (keyAlertUI != null) keyAlertUI.SetActive(false);
         if (coinVestUI != null) coinVestUI.SetActive(false);
         if (nextButton != null) nextButton.gameObject.SetActive(false); // NextButton 초기화
+        if (coinImg != null) coinImg.SetActive(false); // CoinImg는 초기에는 비활성화
     }
 
     private void OnMouseEnter()
@@ -180,6 +183,16 @@ public class ObjectInteractionHandler : MonoBehaviour
 
             coinVestUI.SetActive(false);
 
+            // CoinImg 활성화 및 배팅한 수치 표시
+            if (coinImg != null)
+            {
+                coinImg.SetActive(true);
+                if (coinText != null)
+                {
+                    coinText.text = $"{pendingInvestment}"; // 배팅한 코인 수치 표시
+                }
+            }
+
             nextButton.gameObject.SetActive(true);
 
             // 버튼 위치 초기화 (UI 기준)
@@ -197,8 +210,6 @@ public class ObjectInteractionHandler : MonoBehaviour
                 nextButtonCanvasGroup.interactable = true;
                 nextButtonCanvasGroup.blocksRaycasts = true;
             }
-
-
 
             Debug.Log($"Pending investment: {pendingInvestment} coins in {locationName}");
         });
