@@ -66,7 +66,8 @@ public class DialogManager : MonoBehaviour
             1 => "Happy Ending",
             2 => "Normal Ending",
             3 => "Sad Ending",
-            _ => null,
+            4 => "NPC Ending", 
+           _ => null,
         };
     }
 

@@ -14,6 +14,9 @@ public class AnswerManager : MonoBehaviour
     public Button exitButton; // Exit 버튼 추가
     private int endingNumber = 0; // 엔딩 번호 저장
 
+    // isAnswerNPC 변수 추가
+    public bool isAnswerNPC = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -52,7 +55,8 @@ public class AnswerManager : MonoBehaviour
         string answer2 = answer2Field.text.Trim().ToLower();
         string answer3 = answer3Field.text.Trim().ToLower();
 
-        if (string.IsNullOrEmpty(answer1) || string.IsNullOrEmpty(answer2) || string.IsNullOrEmpty(answer3))
+        // isAnswerNPC가 true일 때는 빈 문항 체크를 건너뜁니다.
+        if (!isAnswerNPC && (string.IsNullOrEmpty(answer1) || string.IsNullOrEmpty(answer2) || string.IsNullOrEmpty(answer3)))
         {
             Debug.Log("빈 문항이 있습니다");
             return;
@@ -62,7 +66,13 @@ public class AnswerManager : MonoBehaviour
         bool isAnswer2Correct = answer2 == "two";
         bool isAnswer3Correct = answer3 == "three";
 
-        if (!isAnswer3Correct)
+        // isAnswerNPC가 true일 경우 엔딩 번호를 4로 설정
+        if (isAnswerNPC)
+        {
+            Debug.Log("NPC 엔딩");
+            endingNumber = 4;
+        }
+        else if (!isAnswer3Correct)
         {
             Debug.Log("새드 엔딩");
             endingNumber = 3;
