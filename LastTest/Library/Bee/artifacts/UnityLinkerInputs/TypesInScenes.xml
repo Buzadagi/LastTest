@@ -52,18 +52,27 @@
 		<type fullname="UnityEngine.Rendering.VolumeProfile" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.HighDefinition.Runtime">
+		<type fullname="UnityEngine.Rendering.HighDefinition.Bloom" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.ComputeMaterialLibrary" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.ContactShadows" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.DiffusionProfileList" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.Exposure" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.Fog" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.GlobalIllumination" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.GradientSky" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineEditorResources" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineGlobalSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineRuntimeResources" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.HDRISky" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.HDShadowSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.HighQualityLineRenderingVolumeComponent" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.MotionBlur" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.RayTracingSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.ScreenSpaceAmbientOcclusion" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.Tonemapping" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.VisualEnvironment" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.WaterRendering" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="Unity.RenderPipelines.Universal.Runtime">
+		<type fullname="UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
 		<type fullname="TMPro.TextMeshProUGUI" preserve="nothing"/>

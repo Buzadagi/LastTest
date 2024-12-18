@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\buzad\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\shaders\\spriteshadows.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\shaders\\spriteshadows.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Temp\\Compiled-Sprites-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Temp\\Compiled-Sprites-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\buzad\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\script\\locationscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\locationscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|c:\\users\\buzad\\onedrive\\\uBB38\uC11C\\github\\lasttest\\lasttest\\assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77A4E48B-8AC4-D886-9A03-7A3FFDF4FCD1}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\answerbox\\answermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -78,11 +90,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ObjectInteractionHandler.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\ObjectInteractionHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ObjectInteractionHandler.cs",
@@ -95,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "SceneMove.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\SceneMove.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\SceneMove.cs",
@@ -108,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
@@ -121,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerMovement.cs",
@@ -134,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DisplayLocationName.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\DisplayLocationName.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\DisplayLocationName.cs",
@@ -147,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "NPC.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\NPC.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\NPC.cs",
@@ -160,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "BuildManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\BuildManager.cs",
               "RelativeDocumentMoniker": "Assets\\BuildManager.cs",
@@ -173,7 +185,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 1,
+              "Title": "Compiled-Sprites-Default.shader",
+              "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Temp\\Compiled-Sprites-Default.shader",
+              "RelativeDocumentMoniker": "Temp\\Compiled-Sprites-Default.shader",
+              "ToolTip": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Temp\\Compiled-Sprites-Default.shader",
+              "RelativeToolTip": "Temp\\Compiled-Sprites-Default.shader",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-12-18T10:30:40.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpriteShadows.shader",
+              "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Shaders\\SpriteShadows.shader",
+              "RelativeDocumentMoniker": "Assets\\Shaders\\SpriteShadows.shader",
+              "ToolTip": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Shaders\\SpriteShadows.shader",
+              "RelativeToolTip": "Assets\\Shaders\\SpriteShadows.shader",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-12-18T10:29:03.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LocationSceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\LocationSceneManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\LocationSceneManager.cs",
+              "ToolTip": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\LocationSceneManager.cs",
+              "RelativeToolTip": "Assets\\Script\\LocationSceneManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T10:22:04.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "LocationSceneManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\LocationSceneManager.cs",
               "RelativeDocumentMoniker": "Assets\\LocationSceneManager.cs",
@@ -185,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "HighlightOnHover.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\HighlightOnHover.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\HighlightOnHover.cs",
@@ -197,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AnswerManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\AnswerBox\\AnswerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\AnswerBox\\AnswerManager.cs",
@@ -210,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AnswerBoxController.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\AnswerBox\\AnswerBoxController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\AnswerBox\\AnswerBoxController.cs",
@@ -222,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "NPCManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\NPCManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\NPCManager.cs",
@@ -234,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ObjectInteraction.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\ObjectInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ObjectInteraction.cs",
@@ -246,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "DialogManager.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\DialogManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\DialogManager.cs",
@@ -258,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "TitleScreen.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\TitleScreen.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\TitleScreen.cs",
@@ -270,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CameraFollow.cs",
@@ -282,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "QuestionButtonHandler.cs",
               "DocumentMoniker": "C:\\Users\\buzad\\OneDrive\\\uBB38\uC11C\\Github\\LastTest\\LastTest\\Assets\\Script\\QuestionButtonHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\QuestionButtonHandler.cs",

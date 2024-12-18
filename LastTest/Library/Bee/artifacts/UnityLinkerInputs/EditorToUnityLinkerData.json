@@ -746,7 +746,28 @@
         {
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.Bloom",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.ComputeMaterialLibrary",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.ContactShadows",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.DiffusionProfileList",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -767,21 +788,7 @@
         {
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.Fog",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.GlobalIllumination",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.GradientSky",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.HDRenderPipelineEditorResources",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -802,6 +809,34 @@
         {
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.HDRISky",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.HDShadowSettings",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.HighQualityLineRenderingVolumeComponent",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.MotionBlur",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky",
             "moduleName": "",
             "usedInScenes": []
@@ -809,14 +844,14 @@
         {
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.RayTracingSettings",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.ScreenSpaceAmbientOcclusion",
             "moduleName": "",
             "usedInScenes": []
         },
         {
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.Tonemapping",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -824,6 +859,13 @@
             "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.VisualEnvironment",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.HighDefinition.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.HighDefinition.WaterRendering",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -1048,6 +1090,13 @@
             "managedAssemblyName": "Unity.RenderPipelines.Core.Runtime.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.Rendering.UI.UIFoldout",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.RenderPipelines.Universal.Runtime.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings",
             "moduleName": "",
             "usedInScenes": []
         },
