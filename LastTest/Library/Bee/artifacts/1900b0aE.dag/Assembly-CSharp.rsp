@@ -415,6 +415,7 @@
 "Assets/Script/DisplayLocationName.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/HighlightOnHover.cs"
+"Assets/Script/LocationSceneManager.cs"
 "Assets/Script/NPCManager.cs"
 "Assets/Script/ObjectInteraction.cs"
 "Assets/Script/ObjectInteractionHandler.cs"

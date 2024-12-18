@@ -7,7 +7,8 @@
 		<type fullname="DisplayLocationName" preserve="nothing"/>
 		<type fullname="GameManager" preserve="nothing"/>
 		<type fullname="HighlightOnHover" preserve="nothing"/>
-		<type fullname="NPC" preserve="nothing"/>
+		<type fullname="LocationSceneManager" preserve="nothing"/>
+		<type fullname="NPCManager" preserve="nothing"/>
 		<type fullname="ObjectInteraction" preserve="nothing"/>
 		<type fullname="ObjectInteractionHandler" preserve="nothing"/>
 		<type fullname="PlayerMovement" preserve="nothing"/>
@@ -48,12 +49,21 @@
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector3" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector4" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.UIFoldout" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.VolumeProfile" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.HighDefinition.Runtime">
 		<type fullname="UnityEngine.Rendering.HighDefinition.ComputeMaterialLibrary" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.Exposure" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.Fog" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.GlobalIllumination" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.GradientSky" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineGlobalSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.HighDefinition.HDRenderPipelineRuntimeResources" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.PhysicallyBasedSky" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.RayTracingSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.HighDefinition.VisualEnvironment" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
 		<type fullname="TMPro.TextMeshProUGUI" preserve="nothing"/>
@@ -89,6 +99,7 @@
 		<type fullname="UnityEngine.Canvas" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasGroup" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
+		<type fullname="UnityEngine.CapsuleCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
 		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.ComputeShader" preserve="nothing"/>
@@ -110,6 +121,7 @@
 		<type fullname="UnityEngine.Renderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.GraphicsSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.RenderSettings" preserve="nothing"/>
+		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.RuntimeAnimatorController" preserve="nothing"/>
 		<type fullname="UnityEngine.Shader" preserve="nothing"/>
 		<type fullname="UnityEngine.Sprite" preserve="nothing"/>

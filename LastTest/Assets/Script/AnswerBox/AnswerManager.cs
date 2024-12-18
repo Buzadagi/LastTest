@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class AnswerManager : MonoBehaviour
 {
@@ -39,9 +40,44 @@ public class AnswerManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // Tab 키로 TMP_InputField 이동
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Selectable current = EventSystem.current.currentSelectedGameObject?.GetComponent<Selectable>();
+            if (current != null)
+            {
+                Selectable next;
+
+                // Shift+Tab: 위로 이동, Tab: 아래로 이동
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                {
+                    next = current.FindSelectableOnUp();
+                }
+                else
+                {
+                    next = current.FindSelectableOnDown();
+
+                    // 마지막 입력 필드에서 Tab을 누르면 첫 번째 입력 필드로 이동
+                    if (next == null && current == answer3Field)
+                    {
+                        next = answer1Field;
+                    }
+                }
+
+                if (next != null)
+                {
+                    EventSystem.current.SetSelectedGameObject(next.gameObject);
+                }
+            }
+        }
+    }
+
     public void ShowAnswerUI()
     {
         answerUI.SetActive(true);
+        answer1Field.Select(); // UI가 활성화되면 첫 번째 입력 필드 선택
     }
 
     public void HideAnswerUI()
@@ -62,9 +98,9 @@ public class AnswerManager : MonoBehaviour
             return;
         }
 
-        bool isAnswer1Correct = answer1 == "one";
-        bool isAnswer2Correct = answer2 == "two";
-        bool isAnswer3Correct = answer3 == "three";
+        bool isAnswer1Correct = answer1 == "bequest";
+        bool isAnswer2Correct = answer2 == "piano string";
+        bool isAnswer3Correct = answer3 == "edward";
 
         // isAnswerNPC가 true일 경우 엔딩 번호를 4로 설정
         if (isAnswerNPC)

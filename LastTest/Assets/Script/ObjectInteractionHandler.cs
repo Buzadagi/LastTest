@@ -263,7 +263,7 @@ public class ObjectInteractionHandler : MonoBehaviour
             {
                 Transform targetLocation = npcManager.buildingLocations[buildingNumber];
 
-                // 유저의 pendingInvestment와 겹치는 NPC의 betAmount 비교
+                // 유저의 pendingInvestment와 NPC의 betAmount 비교
                 NPCManager.NPCInfo npcAtLocation = null;
                 foreach (var npc in npcManager.npcList)
                 {
@@ -274,36 +274,35 @@ public class ObjectInteractionHandler : MonoBehaviour
                     }
                 }
 
-                // npcAtLocation이 null이 아니면 비교 작업 진행
                 if (npcAtLocation != null)
                 {
                     Debug.Log($"유저의 pendingInvestment: {pendingInvestment}, NPC {npcAtLocation.npcName}의 betAmount: {npcAtLocation.betAmount}");
 
                     if (pendingInvestment >= npcAtLocation.betAmount)
                     {
-                        // pendingInvestment가 더 크거나 같으면 씬 이동
-                        SceneMove.LoadSceneWithPosition(sceneName, targetLocation.position);
+                        // LocationSceneManager에 destinationPosition 전달
+                        LocationSceneManager.destinationPosition = destinationPosition;
+
+                        // 씬 이동
+                        SceneMove.LoadSceneWithPosition(sceneName, destinationPosition);
                     }
                     else
                     {
-                        // betAmount가 더 크면 씬 이동하지 않고 버튼 비활성화
-                        nextButton.gameObject.SetActive(false); // NextButton 비활성화
-                        coinImg.SetActive(false); // Coin Img 비활성화
+                        nextButton.gameObject.SetActive(false);
+                        coinImg.SetActive(false);
                         Debug.Log("NPC의 betAmount가 더 큽니다. 유저는 다른 장소를 선택해야 합니다.");
-
-                        // 이미지 팝업 활성화 및 알파값 줄이기
-                        StartCoroutine(ShowMessageAndFadeOut()); // 메시지 표시하고 알파값 줄이기
+                        StartCoroutine(ShowMessageAndFadeOut());
                     }
                 }
                 else
                 {
-                    // 해당 위치에 NPC가 없을 때 씬 이동
-                    SceneMove.LoadSceneWithPosition(sceneName, targetLocation.position);
+                    // NPC가 없을 경우 LocationSceneManager에 destinationPosition 전달
+                    LocationSceneManager.destinationPosition = destinationPosition;
+
+                    // 씬 이동
+                    SceneMove.LoadSceneWithPosition(sceneName, destinationPosition);
                 }
             }
-
-            // 씬 이동
-            // SceneMove.LoadSceneWithPosition(sceneName, destinationPosition);
         });
     }
 

@@ -44,10 +44,14 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins");
-        policeLineText.text = "Police: " + PlayerPrefs.GetInt("PoliceLines");
-        keyText.text = "Keys: " + PlayerPrefs.GetInt("Keys");
-        turnText.text = "Turns: " + PlayerPrefs.GetInt("Turns"); // Turn UI 업데이트
+        //코인 텍스트
+        coinText.text = "" + PlayerPrefs.GetInt("Coins");
+        //경찰 텍스트
+        policeLineText.text = "" + PlayerPrefs.GetInt("PoliceLines");
+        //키 텍스트
+        keyText.text = "" + PlayerPrefs.GetInt("Keys");
+        //턴 수 텍스트
+        turnText.text = "" + PlayerPrefs.GetInt("Turns"); // Turn UI 업데이트
     }
 
     public int GetPlayerCoins()

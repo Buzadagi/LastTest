@@ -31,17 +31,17 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (interactionCanvas == null)
         {
-            Debug.Log($"[{gameObject.name}] Attempting to find Interaction Canvas...");
+            //Debug.Log($"[{gameObject.name}] Attempting to find Interaction Canvas...");
             interactionCanvas = GetComponentInChildren<Canvas>(true);
         }
 
         if (interactionCanvas == null)
         {
-            Debug.LogError($"[{gameObject.name}] Interaction Canvas not found. Please assign it in the Inspector or ensure it exists as a child object.");
+            //Debug.LogError($"[{gameObject.name}] Interaction Canvas not found. Please assign it in the Inspector or ensure it exists as a child object.");
         }
         else
         {
-            Debug.Log($"[{gameObject.name}] Interaction Canvas found: {interactionCanvas.name}");
+            //Debug.Log($"[{gameObject.name}] Interaction Canvas found: {interactionCanvas.name}");
         }
     }
 
@@ -49,7 +49,7 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (interactionCanvas == null)
         {
-            Debug.LogError($"[{gameObject.name}] Interaction Canvas is still null after Awake. Cannot proceed.");
+            //Debug.LogError($"[{gameObject.name}] Interaction Canvas is still null after Awake. Cannot proceed.");
             return;
         }
 
@@ -68,7 +68,7 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (interactionDataList.Count == 0)
         {
-            Debug.LogWarning($"No interaction data found for object {objectName}");
+            //Debug.LogWarning($"No interaction data found for object {objectName}");
             EndInteraction();
             return;
         }
