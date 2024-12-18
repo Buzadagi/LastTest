@@ -6925,7 +6925,7 @@ MonoBehaviour:
     npcMarkerPrefab: {fileID: 6597828677344619779, guid: d28914cdb78806944bbbb629efb718b3, type: 3}
     question1Locations: 03000000
     question2Locations: 0200000004000000
-    question3Locations: 030000000100000007000000
+    question3Locations: 010000000300000007000000
     visitedLocations: 
     question1Solved: 0
     question2Solved: 0
